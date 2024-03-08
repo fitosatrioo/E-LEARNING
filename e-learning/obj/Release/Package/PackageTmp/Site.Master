@@ -1,0 +1,157 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="e_learning.SiteMaster" %>
+<%@ Register Src="~/uc_menu.ascx" TagPrefix="uc1" TagName="uc_menu" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>E-Learning</title>
+
+    <link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="../css/londinium-theme.css" type="text/css" rel="stylesheet" />
+    <link href="../css/styles.min.css" type="text/css" rel="stylesheet" />
+    <link href="../css/icons.min.css" type="text/css" rel="stylesheet" />
+<%--    <link rel="icon" href="img/fabicon.png" />--%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body class="sidebar-wide" runat="server" id="body_site">
+    <form id="form1" runat="server">
+<div>
+        <div class="navbar navbar-inverse" role="navigation" style="background-image: url('img/bg1.png')">
+            <div class="navbar-header">
+                <p class="navbar-brand" href="#">E-Learning</p>
+                <a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu-left"><span class="sr-only">Toggle navbar button</span><i class="icon-insert-template"></i></button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons"><span class="sr-only">Toggle navbar</span><i class="icon-grid3"></i></button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar"><span class="sr-only">Toggle navigation</span><i class="icon-paragraph-justify2"></i></button>
+            </div>
+
+            <div class="nav navbar-nav navbar-left collapse" id="navbar-text">
+              <%--  <p class="navbar-text"><i class="icon-star"></i> Total Quality Assurance</p>--%>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+                <li class="user dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i style="padding-top:8px" class="icon-user"></i>
+                        <span  runat="server" id="lb_user">Username
+                        </span><i class="caret"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-right icons-right">
+                        <li><a href="#" runat="server" id="a_logout"><i class="icon-exit"></i>Logout</a></li>
+                        <li><a href="#" runat="server" id="a_publish">Publish Date</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-container" runat="server" id="div_container">
+
+            <!-- Sidebar -->
+            <div class="sidebar collapse" runat="server" id="div_sidebar" style="background-image: url('img/bg1.png')">
+                <uc1:uc_menu runat="server" id="uc_menu" />
+            </div>
+
+            <div class="page-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="../js/plugins/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/charts/sparkline.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/select2.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/inputmask.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/autosize.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/inputlimit.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/listbox.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/multiselect.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/validate.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/tags.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/switch.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/uploader/plupload.full.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/uploader/plupload.queue.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/forms/wysihtml5/toolbar.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/daterangepicker.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/fancybox.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/moment.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/jgrowl.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/datatables.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/colorpicker.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/application.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/timepicker.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/interface/collapsible.min.js"></script>
+
+        <script type="text/javascript">
+            if (navigator.appCodeName == "Mozilla") {
+                $(".dxpgHeader,.dxsplVSeparator,.dxgvHeader,.dxgvGroupPanel")
+                    .on('mousedown', function () {
+                        $('body').css('-webkit-user-select', 'none')
+                    })
+                    .on('mouseup', function () {
+                        $('body').css('-webkit-user-select', '')
+                    });
+            }
+
+            window.onload = function () {
+                var GetDocumentScrollTop = function () {
+                    var isScrollBodyIE = ASPx.Browser.IE && ASPx.GetCurrentStyle(document.body).overflow == "hidden" && document.body.scrollTop > 0;
+                    if (ASPx.Browser.WebKitFamily || isScrollBodyIE) {
+                        if (ASPx.Browser.MacOSMobilePlatform)
+                            return window.pageYOffset;
+                        else if (ASPx.Browser.WebKitFamily)
+                            return document.documentElement.scrollTop || document.body.scrollTop;
+                        return document.body.scrollTop;
+                    }
+                    else
+                        return document.documentElement.scrollTop;
+                };
+                var _aspxGetDocumentScrollTop = function () {
+                    if (__aspxWebKitFamily) {
+                        if (__aspxMacOSMobilePlatform)
+                            return window.pageYOffset;
+                        else
+                            return document.documentElement.scrollTop || document.body.scrollTop;
+                    }
+                    else
+                        return document.documentElement.scrollTop;
+                }
+                if (window._aspxGetDocumentScrollTop) {
+                    window._aspxGetDocumentScrollTop = _aspxGetDocumentScrollTop;
+                    window.ASPxClientUtils.GetDocumentScrollTop = _aspxGetDocumentScrollTop;
+                } else {
+                    window.ASPx.GetDocumentScrollTop = GetDocumentScrollTop;
+                    window.ASPxClientUtils.GetDocumentScrollTop = GetDocumentScrollTop;
+                }
+            };
+            function tampil_pesan(e, f) {
+                if (e == 'berhasil') {
+                    $.jGrowl(f, { theme: 'growl-success', header: 'Success !', life: 10000 });
+                } else if (e == 'gagal') {
+                    $.jGrowl(f, { theme: 'growl-error', header: 'Error !', life: 10000 });
+                } else if (e == 'info') {
+                    $.jGrowl(f, { header: 'Notification !', life: 10000 });
+                } else {
+                }
+            }
+
+        </script>
+    </div>
+    </form>
+</body>
+</html>
